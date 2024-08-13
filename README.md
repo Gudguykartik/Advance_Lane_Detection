@@ -1,7 +1,7 @@
 # Advanced Lane Detection
 ![annotated](output_images/annotated_test2.png)
 ## Overview
-Detect lanes using computer vision techniques. This project is part of the [Udacity Self-Driving Car Nanodegree](https://www.udacity.com/drive), and much of the code is leveraged from the lecture notes.
+Detect lanes using computer vision techniques.
 
 The following steps were performed for lane detection:
 
@@ -14,7 +14,6 @@ The following steps were performed for lane detection:
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
-[Here](https://youtu.be/lSd_WY1bqLw) is the final video output on Youtube. The same video is 'out.mp4' in this repo. The original video is 'project_video.mp4'.
 
 ## Dependencies
 * Python 3.5
@@ -126,12 +125,3 @@ Given all the above, we can annotate the original image with the lane area, and 
 * Use the inverse warp matrix calculated from the perspective transform, to "unwarp" the above such that it is aligned with the original image's perspective
 * Overlay the above annotation on the original image
 * Add text to the original image to display lane curvature and vehicle offset
-
-The code to perform the above is in the function `final_viz()` in 'line_fit.py'.
-
-Below is the final annotated version of our original image. For all images in 'test_images/\*.jpg', the final annotated version of that image is saved in 'output_images/annotated_\*.png'.
-
-![annotated](output_images/annotated_test2.png)
-
-## Discussion
-This is an initial version of advanced computer-vision-based lane finding. There are multiple scenarios where this lane finder would not work. For example, the Udacity challenge video includes roads with cracks which could be mistaken as lane lines (see 'challenge_video.mp4'). Also, it is possible that other vehicles in front would trick the lane finder into thinking it was part of the lane. More work can be done to make the lane detector more robust, e.g. [deep-learning-based semantic segmentation](https://arxiv.org/pdf/1605.06211.pdf) to find pixels that are likely to be lane markers (then performing polyfit on only those pixels).
